@@ -1,17 +1,22 @@
 import React from 'react';
 import ClassNames from 'classnames';
+import Badge from '../Badge/Badge';
 
-import './sidebar.scss';
+import './SidebarList.scss';
 
-const Sidebar = ({items, isRemovable}) => {
+const SidebarList = ({items, isRemovable, onClick}) => {
     return (
-      <ul className="sidebar__list">
+      <ul onClick={onClick} className="sidebar__list">
         {
           items.map((item, index) => 
             (
               <li key={index} className={ClassNames(item.className, {'active' : item.active})}>
                 <i>
-                  {item.icon? item.icon : <i className={`badge badge__${item.color}`}></i>}
+                  {item.icon? (
+                    item.icon
+                    ) : (
+                    <Badge color={item.color}/>
+                    )}
                 </i>
                 <span>
                   {item.name}
@@ -24,4 +29,4 @@ const Sidebar = ({items, isRemovable}) => {
     );
 }
 
-export default Sidebar;
+export default SidebarList;

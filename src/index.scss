@@ -16,7 +16,7 @@ position: absolute;
 left: 50%;
 top: 50%;
 width: 750px;
-height: 530px;
+height: 650px;
 transform: translate(-50%, -50%);
 box-shadow: 1px 5px 20px #f1f1f1;
 border-radius: 10px;
@@ -30,4 +30,34 @@ font-size: 16px;
     border-right: 1px solid #f1f1f1;
     padding: 60px 20px;
   }
+}
+
+.field{
+  background-color: #ffffff;
+  border: 1px solid #efefef;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+
+  &:focus{
+      border-color: #aca8a8;
+  }
+}
+
+.button{
+  background-color: #4dd599;
+  border-radius: 4px;
+  color: #ffffff;
+  border: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover{
+      background-color: darken(#4dd599, 10%);
+  }
+  &:active{
+      background-color: darken(#4dd599, 15%);
+  }
+
 }

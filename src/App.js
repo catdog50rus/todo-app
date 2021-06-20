@@ -1,51 +1,38 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
-import SidebarList from './components/sidebar/sidebar';
-import listIcon from './asserts/img/list.png';
-import addIcon from './asserts/img/add.png';
+import SidebarList from './components/SidebarList/SidebarList';
+import AddList from './components/AddList/AddList';
+import AllList from './components/AllList/AllList';
+
+import DB from './asserts/db.json';
+
 
 function App() {
+  
   return (
     <div className="todo">
       <div className="todo__sidebar">
-        <SidebarList items = {
-          [
-            {
-              icon: <img src={listIcon} alt="list_item" />,
-              name: 'Все задачи',
-              active: true
-            }
-          ]} />
+        <AllList />
         <SidebarList items = {[
           {
             color: 'red',
-            name: 'Новая задача 1',
-            active: false
+            name: 'Новая задача 1'
           },
           {
             color: 'green',
-            name: 'Новая задача 2',
-            active: false
+            name: 'Новая задача 2'
           },
           {
             color: 'blue',
-            name: 'Новая задача 3',
-            active: false
+            name: 'Новая задача 3'
           }
         ]}
           isRemovable
         />
-        <SidebarList items = {[
-          {
-            className: 'list__add-button',
-            icon: <img src={addIcon} alt="list_item" />,
-            name: 'Добавить список',
-            active: false
-          }
-        ]} />
+        <AddList colors={DB.colors} />
       </div>
       <div className="todo__tasks">
-        tasks
+        
       </div>
     </div>
   );
